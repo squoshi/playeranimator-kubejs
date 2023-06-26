@@ -1,4 +1,4 @@
-# playerAnimator-KubeJS
+# Player Animations in KubeJS
 A "library" for registering and activating playerAnimator animations via KubeJS.
 
 # Creating an animation
