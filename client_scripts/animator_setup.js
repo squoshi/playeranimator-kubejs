@@ -3,7 +3,6 @@ const PlayerAnimationRegistry = java("dev.kosmx.playerAnim.minecraftApi.PlayerAn
 const KeyframeAnimationPlayer = java("dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer");
 const FirstPersonMode = java("dev.kosmx.playerAnim.api.firstPerson.FirstPersonMode");
 const FirstPersonConfiguration = java("dev.kosmx.playerAnim.api.firstPerson.FirstPersonConfiguration");
-const AbstractFadeModifier = java("dev.kosmx.playerAnim.api.layered.modifier.AbstractFadeModifier")
 
 onEvent('client.init', event => {
     const AnimationFactory = java('dev.kosmx.playerAnim.minecraftApi.PlayerAnimationFactory')
@@ -31,19 +30,19 @@ onEvent('player.data_from_server.animation', event => {
             let animation = PlayerAnimationAccess.getPlayerAssociatedData(entity.minecraftEntity).get("kubejs:animation");
             if (animation != null) {
                 if (event.data.type == 'rightArm') {
-                    animation.replaceAnimationWithFade(AbstractFadeModifier.functionalFadeIn(20, (modelName, type, value) => { value }),
+                    animation.setAnimation(
                         new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(event.data.animation))
                             .setFirstPersonMode(FirstPersonMode.THIRD_PERSON_MODEL)
                             .setFirstPersonConfiguration(new FirstPersonConfiguration().setShowLeftItem(false))
                     )
                 } else if (event.data.type == 'leftArm') {
-                    animation.replaceAnimationWithFade(AbstractFadeModifier.functionalFadeIn(20, (modelName, type, value) => { value }),
+                    animation.setAnimation(
                         new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(event.data.animation))
                             .setFirstPersonMode(FirstPersonMode.THIRD_PERSON_MODEL)
                             .setFirstPersonConfiguration(new FirstPersonConfiguration().setShowRightItem(false))
                     )
                 } else if (event.data.type == 'bothArms') {
-                    animation.replaceAnimationWithFade(AbstractFadeModifier.functionalFadeIn(20, (modelName, type, value) => { value }),
+                    animation.setAnimation(
                         new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(event.data.animation))
                             .setFirstPersonMode(FirstPersonMode.THIRD_PERSON_MODEL)
                             .setFirstPersonConfiguration(new FirstPersonConfiguration())
