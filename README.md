@@ -14,7 +14,7 @@ The function has three parameters:
   - animation: The second parameter, which just requires a ResourceLocation for the animation. ResourceLocations for animations are just stated as e.g. `'kubejs:waving'`
   - type: The last parameter, which requires a string stating which arms will show in first-person while the animation is running. Valid parameters are `'leftArm'`, `'rightArm'`, and `'bothArms'`.
 
-# Manual activation
+## Manual activation
 The given function tells you everything you need to know about activating an animation.
 
 1. You need to get all player entities in the same dimension as the target and iterate through them
