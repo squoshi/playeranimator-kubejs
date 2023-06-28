@@ -19,4 +19,4 @@ The given function tells you everything you need to know about activating an ani
 
 1. You need to get all player entities in the same dimension as the target and iterate through them
 2. You need to get the player's UUID (e.g. `event.player.id`)
-3. You need to send a packet with the ID `'animation'` to each player, in which the packet has an animation ID, the player's UUID ***AS A STRING**, and the animation type
+3. You need to send a packet with the ID `'animation'` to each player, in which the packet has an animation ID, the player's UUID ***AS A STRING***, and the animation type
