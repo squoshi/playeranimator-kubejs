@@ -2,7 +2,7 @@
   "name": "playeranimator-kubejs",
   "version": "0.0.1",
   "author": "squoshi",
-  "minecraftVersion": "1.18.2",
+  "minecraftVersion": ["1.18.2"],
   "description": "A library script that adds the ability to use playerAnimator animations with KubeJS.",
   "modloaders": ["forge"]
 }
