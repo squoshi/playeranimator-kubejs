@@ -1,9 +1,0 @@
-{
-    "author": "squoshi",
-    "description": "A library script for registering and activating playerAnimator animations",
-    
-    "versions": [8],
-    "modloaders": ["forge"],
-    "dependencies": ["mod:playeranimator"],
-    "incompatibilities": []
-}
